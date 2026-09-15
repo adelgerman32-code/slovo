@@ -30,34 +30,42 @@
 
   .page-head{padding:16px 0 32px;}
   .page-head h1{font-size:32px;}
-  .page-head p{margin-top:12px;color:var(--ink-soft);font-size:16px;max-width:600px;}
+  .page-head p{margin-top:12px;color:var(--ink-soft);font-size:16px;max-width:620px;}
 
-  .group-label{
-    margin:28px 0 12px;
-    font-size:13px;
-    font-weight:700;
-    color:var(--brick);
-    text-transform:uppercase;
-    letter-spacing:0.04em;
-  }
-  .topic-list{display:flex;flex-direction:column;gap:10px;padding-bottom:8px;}
-  .topic{
+  .lesson-list{display:flex;flex-direction:column;gap:10px;padding-bottom:56px;}
+  .lesson{
     background:var(--cream-deep);
     border:1px solid var(--line);
+    border-left:4px solid var(--brick);
     border-radius:4px;
     padding:16px 20px;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
+    gap:16px;
+    align-items:flex-start;
   }
-  .topic h3{font-size:16px;margin-bottom:2px;}
-  .topic p{font-size:13.5px;color:var(--ink-soft);}
-  .topic .arrow{font-size:18px;color:var(--green);flex-shrink:0;}
-  .topic.soon{opacity:0.55;}
-  a.topic{cursor:pointer;}
+  .lesson.review{border-left-color:var(--gold);opacity:0.85;}
+  .lesson .num{
+    font-family:'PT Serif',serif;
+    font-weight:700;
+    font-size:15px;
+    color:var(--brick);
+    flex-shrink:0;
+    width:64px;
+  }
+  .lesson .body h3{font-size:16.5px;margin-bottom:4px;color:var(--ink);font-family:'PT Sans',sans-serif;font-weight:700;}
+  .lesson .body .gram{font-size:13.5px;color:var(--ink-soft);}
+  .lesson .arrow{margin-left:auto;font-size:18px;color:var(--green);flex-shrink:0;align-self:center;}
 
-  footer{padding:28px 0;text-align:center;color:var(--ink-soft);font-size:14px;border-top:1px solid var(--line);margin-top:24px;}
+  .note{
+    background:var(--cream-deep);
+    border-radius:4px;
+    padding:16px 20px;
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-bottom:32px;
+  }
+
+  footer{padding:28px 0;text-align:center;color:var(--ink-soft);font-size:14px;border-top:1px solid var(--line);}
 </style>
 </head>
 <body>
@@ -77,29 +85,63 @@
 
 <div class="wrap page-head">
   <h1>А1 · с нуля</h1>
-  <p>Первый уровень для тех, кто только начинает учить русский язык. Темы идут по порядку — с алфавита до первых простых фраз.</p>
+  <p>Десять уроков от алфавита до первых самостоятельных фраз — грамматика идёт по нарастающей, шаг за шагом.</p>
 </div>
 
 <div class="wrap">
+  <div class="note">Порядок уроков составлен на основе логики двух проверенных учебников РКИ — грамматика вводится в той же последовательности, но все примеры, диалоги и тексты написаны для этого портала заново.</div>
 
-  <div class="group-label">Фонетика</div>
-  <div class="topic-list">
-    <div class="topic soon"><div><h3>Алфавит и произношение</h3><p>Буквы, звуки, ударение</p></div><span class="arrow">→</span></div>
-  </div>
-
-  <div class="group-label">Грамматика</div>
-  <div class="topic-list">
-    <div class="topic soon"><div><h3>Род существительных</h3><p>Мужской, женский, средний род</p></div><span class="arrow">→</span></div>
-    <div class="topic soon"><div><h3>Личные местоимения и глагол «быть»</h3><p>Я, ты, он/она — базовые конструкции</p></div><span class="arrow">→</span></div>
-    <div class="topic soon"><div><h3>Настоящее время глаголов</h3><p>Спряжение глаголов I и II типа</p></div><span class="arrow">→</span></div>
-    <div class="topic soon"><div><h3>Именительный и винительный падеж</h3><p>Первые падежи — кто/что</p></div><span class="arrow">→</span></div>
-  </div>
-
-  <div class="group-label">Лексика</div>
-  <div class="topic-list">
-    <div class="topic soon"><div><h3>Приветствие и знакомство</h3><p>Здравствуйте, как вас зовут, откуда вы</p></div><span class="arrow">→</span></div>
-    <div class="topic soon"><div><h3>Числа и время</h3><p>Счёт, дни недели, который час</p></div><span class="arrow">→</span></div>
-    <div class="topic soon"><div><h3>Семья</h3><p>Названия членов семьи</p></div><span class="arrow">→</span></div>
+  <div class="lesson-list">
+    <div class="lesson">
+      <div class="num">Урок 1</div>
+      <div class="body"><h3>Алфавит и фонетика</h3><div class="gram">гласные и согласные, твёрдость / мягкость, ударение</div></div>
+      <a class="arrow" href="lesson1-alfavit.html" style="text-decoration:none;">→</a>
+    </div>
+    <div class="lesson">
+      <div class="num">Урок 2</div>
+      <div class="body"><h3>Знакомство: «Это...»</h3><div class="gram">род существительных, личные местоимения он / она / оно</div></div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="lesson">
+      <div class="num">Урок 3</div>
+      <div class="body"><h3>Кто это? Что это?</h3><div class="gram">одушевлённость и неодушевлённость, вопросительные конструкции</div></div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="lesson">
+      <div class="num">Урок 4</div>
+      <div class="body"><h3>Моя семья</h3><div class="gram">притяжательные местоимения (мой, твой, наш, ваш, его, её, их), «у меня есть»</div></div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="lesson">
+      <div class="num">Урок 5</div>
+      <div class="body"><h3>Что вы делаете?</h3><div class="gram">глаголы настоящего времени: I и II спряжение</div></div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="lesson">
+      <div class="num">Урок 6</div>
+      <div class="body"><h3>Где вы живёте?</h3><div class="gram">предложный падеж, предлоги «в» и «на» для места</div></div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="lesson">
+      <div class="num">Урок 7</div>
+      <div class="body"><h3>Какой это город?</h3><div class="gram">прилагательные, согласование в роде и числе, указательные местоимения (этот, эта, это, эти)</div></div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="lesson">
+      <div class="num">Урок 8</div>
+      <div class="body"><h3>Что ты купил?</h3><div class="gram">винительный падеж — прямой объект действия</div></div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="lesson">
+      <div class="num">Урок 9</div>
+      <div class="body"><h3>Сколько это стоит?</h3><div class="gram">числительные, родительный падеж при отрицании и с числительными</div></div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="lesson review">
+      <div class="num">Урок 10</div>
+      <div class="body"><h3>Повторение</h3><div class="gram">контрольные упражнения по темам уроков 1–9</div></div>
+      <span class="arrow">→</span>
+    </div>
   </div>
 
 </div>
