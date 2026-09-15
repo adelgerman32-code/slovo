@@ -78,55 +78,16 @@
     justify-content:center;
   }
   .hero-figure svg{width:100%;max-width:320px;height:auto;}
-
-  /* paths */
-  .paths{padding:40px 0 64px;}
-  .paths-head{max-width:560px;margin-bottom:32px;}
-  .paths-head h2{font-size:28px;}
-  .paths-head p{color:var(--ink-soft);margin-top:10px;}
-  .path-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:24px;
-  }
-  .path-card{
-    background:var(--cream-deep);
-    border:1px solid var(--line);
-    border-radius:4px;
-    padding:32px;
-    position:relative;
-  }
-  .path-card.school{border-left:4px solid var(--green);}
-  .path-card.rki{border-left:4px solid var(--brick);}
-  .path-card .kicker{
-    font-size:13px;
-    color:var(--ink-soft);
-    margin-bottom:8px;
-  }
-  .path-card h3{font-size:24px;margin-bottom:12px;}
-  .path-card p{color:var(--ink-soft);margin-bottom:20px;}
-  .path-card ul{list-style:none;margin-bottom:24px;}
-  .path-card li{
-    padding-left:20px;
-    position:relative;
-    margin-bottom:8px;
-    color:var(--ink);
-    font-size:15px;
-  }
-  .path-card li::before{
-    content:"—";
-    position:absolute;left:0;
-    color:var(--ink-soft);
-  }
   .btn{
     display:inline-block;
     padding:12px 24px;
     border-radius:2px;
     font-weight:700;
     font-size:15px;
+    background:var(--green);
+    color:var(--cream);
   }
-  .path-card.school .btn{background:var(--green);color:var(--cream);}
-  .path-card.rki .btn{background:var(--brick);color:var(--cream);}
+  .hero-btn{margin-top:26px;}
 
   /* how it works */
   .how{padding:56px 0;background:var(--green-deep);color:var(--cream);}
@@ -163,7 +124,6 @@
     .hero h1{font-size:32px;}
     .hero-figure{order:-1;}
     .hero-figure svg{max-width:200px;}
-    .path-grid{grid-template-columns:1fr;}
     .steps{grid-template-columns:1fr;}
   }
 </style>
@@ -185,6 +145,7 @@
     <div>
       <h1>Русский язык, объяснённый по-человечески</h1>
       <p>Теория, тренажёры и пробные варианты — для школьников, которые готовятся к ОГЭ и ЕГЭ, и для тех, кто учит русский как иностранный.</p>
+      <a class="btn hero-btn" href="razdely.html">Выбрать раздел</a>
     </div>
     <div class="hero-figure">
       <svg viewBox="0 0 240 260" fill="none">
@@ -209,42 +170,6 @@
 <div class="soon">
   <strong>Скоро:</strong> личный кабинет с прогрессом и полный банк заданий — сейчас Ты видишь самое начало
 </div>
-
-<section class="paths">
-  <div class="wrap">
-    <div class="paths-head">
-      <h2>Выбери свой путь</h2>
-      <p>Две ветки портала — для разных задач, но с общей базой теории и тренажёров.</p>
-    </div>
-    <div class="path-grid">
-
-      <div class="path-card school">
-        <div class="kicker">Для школьников</div>
-        <h3>Подготовка к ОГЭ и ЕГЭ</h3>
-        <p>Разбираем самые каверзные темы: причастный и деепричастный оборот, слитное и раздельное написание НЕ, окончания прилагательных и причастий.</p>
-        <ul>
-          <li>Теория с алгоритмами и схемами</li>
-          <li>Тренажёры по каждой теме</li>
-          <li>Демонстрационный пробный вариант</li>
-        </ul>
-        <a class="btn" href="razdely.html">Начать подготовку</a>
-      </div>
-
-      <div class="path-card rki">
-        <div class="kicker">Русский как иностранный</div>
-        <h3>РКИ: от А1 до С2</h3>
-        <p>Грамматика, падежи, виды глагола и разговорная практика — для тех, кто изучает русский язык как иностранный.</p>
-        <ul>
-          <li>Тест на определение уровня</li>
-          <li>Базовая грамматика по темам</li>
-          <li>Тренажёры без регистрации</li>
-        </ul>
-        <a class="btn" href="razdely.html">Определить уровень</a>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <section class="how">
   <div class="wrap">
