@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Причастный оборот — Слово</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF4E6;
+    --cream-deep:#F3E8D2;
+    --ink:#2B211A;
+    --ink-soft:#5A4E40;
+    --green:#2B5941;
+    --green-deep:#1E3F2D;
+    --gold:#C99A3D;
+    --gold-light:#E8C876;
+    --brick:#9C2B2B;
+    --line:#DCCBA5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--cream);color:var(--ink);font-family:'PT Sans', sans-serif;line-height:1.65;}
+  h1,h2,h3{font-family:'PT Serif', serif;font-weight:700;color:var(--green-deep);}
+  a{color:var(--green);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px;}
+
+  header{padding:24px 0;border-bottom:1px solid var(--line);}
+  header .inner{max-width:820px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'PT Serif', serif;font-size:20px;font-weight:700;color:var(--green-deep);display:flex;align-items:center;gap:8px;}
+  .brand svg{width:26px;height:26px;}
+
+  .crumbs{padding:20px 0 0;font-size:14px;color:var(--ink-soft);}
+  .crumbs a{color:var(--ink-soft);}
+  .crumbs span{color:var(--ink);}
+
+  .page-head{padding:16px 0 36px;border-bottom:1px solid var(--line);}
+  .page-head .kicker{font-size:13px;color:var(--brick);font-weight:700;margin-bottom:8px;}
+  .page-head h1{font-size:34px;line-height:1.2;}
+  .page-head p{margin-top:14px;color:var(--ink-soft);font-size:17px;max-width:600px;}
+
+  section.block{padding:36px 0;border-bottom:1px solid var(--line);}
+  section.block h2{font-size:22px;margin-bottom:14px;}
+  section.block p{margin-bottom:12px;}
+  section.block p:last-child{margin-bottom:0;}
+
+  .example{
+    background:var(--cream-deep);
+    border-left:4px solid var(--green);
+    padding:16px 20px;
+    margin:16px 0;
+    font-size:17px;
+  }
+  .example .label{font-size:13px;color:var(--ink-soft);margin-bottom:6px;}
+  .part{background:var(--gold-light);padding:1px 3px;border-radius:2px;}
+  .word{border-bottom:2px solid var(--brick);}
+
+  .algo{
+    background:var(--green-deep);
+    color:var(--cream);
+    border-radius:4px;
+    padding:28px;
+    margin:20px 0;
+  }
+  .algo .step{
+    display:flex;
+    gap:14px;
+    padding:12px 0;
+    border-top:1px solid rgba(251,244,230,0.15);
+  }
+  .algo .step:first-child{border-top:none;padding-top:0;}
+  .algo .step .n{
+    font-family:'PT Serif',serif;
+    color:var(--gold-light);
+    font-weight:700;
+    flex-shrink:0;
+    width:22px;
+  }
+  .algo .step p{color:#E4D9C0;font-size:15px;margin:0;}
+  .algo .step strong{color:var(--cream);}
+
+  .rule-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-top:16px;
+  }
+  .rule-card{
+    background:var(--cream-deep);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:18px 20px;
+  }
+  .rule-card .tag{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    padding:2px 8px;
+    border-radius:2px;
+    margin-bottom:10px;
+  }
+  .rule-card.after .tag{background:var(--green);color:var(--cream);}
+  .rule-card.before .tag{background:var(--brick);color:var(--cream);}
+  .rule-card p{font-size:15px;margin-bottom:8px;}
+  .rule-card .ex{font-size:15px;color:var(--ink-soft);}
+
+  .next-strip{
+    padding:36px 0 56px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:2px;
+    font-weight:700;
+    font-size:15px;
+    background:var(--green);
+    color:var(--cream);
+  }
+  .btn:hover{text-decoration:none;opacity:0.92;}
+
+  footer{padding:28px 0;text-align:center;color:var(--ink-soft);font-size:14px;border-top:1px solid var(--line);}
+
+  @media (max-width:600px){
+    .page-head h1{font-size:27px;}
+    .rule-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="#2B5941" stroke-width="1.5"/><path d="M13 26V14L20 20L27 14V26" stroke="#2B5941" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Слово
+    </a>
+  </div>
+</header>
+
+<div class="wrap crumbs">
+  <a href="index.html">Главная</a> · <a href="index.html#theory">Теория</a> · <span>Причастный оборот</span>
+</div>
+
+<div class="wrap page-head">
+  <div class="kicker">Для школьников · ОГЭ, ЕГЭ</div>
+  <h1>Причастный оборот</h1>
+  <p>Разберёмся, как найти причастный оборот в предложении и когда его нужно выделять запятыми — а когда нет.</p>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Что это такое</h2>
+    <p>Причастный оборот — это причастие вместе со словами, которые от него зависят. Он всегда относится к существительному или местоимению и отвечает на вопрос <em>какой?</em></p>
+    <div class="example">
+      <div class="label">Пример</div>
+      Дорожка, <span class="part">ведущая к морю</span>, проходила через сад.
+    </div>
+    <p>Здесь <span class="word">«ведущая»</span> — причастие, а <span class="word">«к морю»</span> — зависимое слово. Вместе они образуют оборот, который отвечает на вопрос «какая?» к слову «дорожка».</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Как найти оборот в предложении</h2>
+    <div class="algo">
+      <div class="step">
+        <div class="n">1</div>
+        <p><strong>Находим причастие.</strong> Ищем слово, которое отвечает на вопрос «какой? что делающий? что сделавший?»</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <p><strong>Задаём от него вопрос.</strong> Смотрим, какие слова в предложении зависят от причастия — они и входят в оборот.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <p><strong>Находим определяемое слово.</strong> Это существительное или местоимение, к которому относится весь оборот целиком.</p>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <p><strong>Смотрим на порядок слов.</strong> От этого зависит, нужны ли запятые — смотри правило ниже.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Когда ставим запятые</h2>
+    <p>Всё решает порядок слов: где стоит оборот относительно определяемого слова.</p>
+    <div class="rule-grid">
+      <div class="rule-card after">
+        <span class="tag">Запятые нужны</span>
+        <p>Оборот стоит <strong>после</strong> определяемого слова.</p>
+        <div class="ex">Дорожка, <span class="part">ведущая к морю</span>, проходила через сад.</div>
+      </div>
+      <div class="rule-card before">
+        <span class="tag">Запятые не нужны</span>
+        <p>Оборот стоит <strong>перед</strong> определяемым словом.</p>
+        <div class="ex"><span class="part">Ведущая к морю</span> дорожка проходила через сад.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap next-strip">
+  <div>
+    <h2 style="font-size:20px;">Готовы проверить себя?</h2>
+    <p style="color:var(--ink-soft);margin-top:6px;">Пройдите короткий тренажёр по этой теме — 8 заданий, сразу видно результат.</p>
+  </div>
+  <a class="btn" href="#">К тренажёру →</a>
+</div>
+
+<footer>
+  Портал «Слово» · русский язык и РКИ
+</footer>
+
+</body>
+</html>
