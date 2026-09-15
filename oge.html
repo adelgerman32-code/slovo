@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ОГЭ — Слово</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF4E6; --cream-deep:#F3E8D2; --ink:#2B211A; --ink-soft:#5A4E40;
+    --green:#2B5941; --green-deep:#1E3F2D; --gold:#C99A3D; --gold-light:#E8C876;
+    --brick:#9C2B2B; --line:#DCCBA5; --teal:#2B6659;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--cream);color:var(--ink);font-family:'PT Sans', sans-serif;line-height:1.6;}
+  h1,h2{font-family:'PT Serif', serif;font-weight:700;color:var(--green-deep);}
+  a{color:var(--green);text-decoration:none;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+
+  header{padding:24px 0;border-bottom:1px solid var(--line);}
+  header .inner{max-width:1000px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'PT Serif', serif;font-size:20px;font-weight:700;color:var(--green-deep);display:flex;align-items:center;gap:8px;}
+  .brand svg{width:26px;height:26px;}
+
+  .crumbs{padding:20px 0 0;font-size:14px;color:var(--ink-soft);}
+  .crumbs a{color:var(--ink-soft);}
+  .crumbs span{color:var(--ink);}
+
+  .page-head{padding:16px 0 32px;}
+  .page-head h1{font-size:32px;}
+  .page-head p{margin-top:12px;color:var(--ink-soft);font-size:16px;max-width:620px;}
+
+  .part-label{
+    margin:32px 0 14px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--brick);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(170px, 1fr));
+    gap:10px;
+    padding-bottom:8px;
+  }
+  .tile{
+    background:var(--cream-deep);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:14px 14px 12px;
+    min-height:82px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .tile .n{font-family:'PT Serif',serif;font-weight:700;color:var(--green-deep);font-size:16px;}
+  .tile .t{font-size:12.5px;color:var(--ink-soft);margin-top:4px;line-height:1.3;}
+
+  .single-tile{
+    background:var(--teal);
+    color:var(--cream);
+    border-radius:4px;
+    padding:22px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:8px;
+  }
+  .single-tile h3{color:var(--cream);font-size:19px;}
+  .single-tile p{font-size:14px;opacity:0.9;margin-top:4px;}
+
+  .essay-tile{
+    margin-top:8px;
+    background:var(--brick);
+    color:var(--cream);
+    border-radius:4px;
+    padding:22px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .essay-tile h3{color:var(--cream);font-size:19px;}
+  .essay-tile p{font-size:14px;opacity:0.9;margin-top:4px;}
+
+  footer{padding:28px 0;text-align:center;color:var(--ink-soft);font-size:14px;border-top:1px solid var(--line);margin-top:40px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="#2B5941" stroke-width="1.5"/><path d="M13 26V14L20 20L27 14V26" stroke="#2B5941" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Слово
+    </a>
+  </div>
+</header>
+
+<div class="wrap crumbs">
+  <a href="index.html">Главная</a> · <a href="razdely.html">Разделы</a> · <span>ОГЭ</span>
+</div>
+
+<div class="wrap page-head">
+  <h1>ОГЭ по русскому языку</h1>
+  <p>Экзамен состоит из трёх частей: сжатое изложение, 11 заданий с кратким ответом и сочинение — 13 заданий по формату ФИПИ.</p>
+</div>
+
+<div class="wrap">
+
+  <div class="part-label">Часть 1</div>
+  <div class="single-tile">
+    <div>
+      <h3>Задание 1 · Сжатое изложение</h3>
+      <p>Прослушать текст и передать главное содержание — не менее 70 слов</p>
+    </div>
+    <span>Скоро →</span>
+  </div>
+
+  <div class="part-label">Часть 2 · задания с кратким ответом</div>
+  <div class="grid">
+    <div class="tile"><div class="n">2</div><div class="t">Синтаксический анализ: грамматическая основа</div></div>
+    <div class="tile"><div class="n">3</div><div class="t">Анализ характеристик предложений</div></div>
+    <div class="tile"><div class="n">4</div><div class="t">Пунктуационный анализ: правило и пример</div></div>
+    <div class="tile"><div class="n">5</div><div class="t">Расстановка знаков препинания</div></div>
+    <div class="tile"><div class="n">6</div><div class="t">Орфографический анализ: объяснение написания</div></div>
+    <div class="tile"><div class="n">7</div><div class="t">Орфографический анализ: вставьте буквы</div></div>
+    <div class="tile"><div class="n">8</div><div class="t">Морфологические нормы</div></div>
+    <div class="tile"><div class="n">9</div><div class="t">Анализ словосочетания</div></div>
+    <div class="tile"><div class="n">10</div><div class="t">Смысловой анализ текста</div></div>
+    <div class="tile"><div class="n">11</div><div class="t">Анализ средств выразительности</div></div>
+    <div class="tile"><div class="n">12</div><div class="t">Лексический анализ</div></div>
+  </div>
+
+  <div class="part-label">Часть 3</div>
+  <div class="essay-tile">
+    <div>
+      <h3>Задание 13 · Сочинение</h3>
+      <p>Сочинение-рассуждение по одной из предложенных тем</p>
+    </div>
+    <span>Скоро →</span>
+  </div>
+
+</div>
+
+<footer>
+  Портал «Слово» · русский язык и РКИ
+</footer>
+
+</body>
+</html>
