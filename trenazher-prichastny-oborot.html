@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тренажёр: причастный оборот — Слово</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF4E6;
+    --cream-deep:#F3E8D2;
+    --ink:#2B211A;
+    --ink-soft:#5A4E40;
+    --green:#2B5941;
+    --green-deep:#1E3F2D;
+    --gold:#C99A3D;
+    --gold-light:#E8C876;
+    --brick:#9C2B2B;
+    --line:#DCCBA5;
+    --ok:#2B5941;
+    --bad:#9C2B2B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--cream);color:var(--ink);font-family:'PT Sans', sans-serif;line-height:1.6;}
+  h1,h2{font-family:'PT Serif', serif;font-weight:700;color:var(--green-deep);}
+  a{color:var(--green);}
+  .wrap{max-width:680px;margin:0 auto;padding:0 24px;}
+
+  header{padding:24px 0;border-bottom:1px solid var(--line);}
+  header .inner{max-width:680px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'PT Serif', serif;font-size:20px;font-weight:700;color:var(--green-deep);display:flex;align-items:center;gap:8px;text-decoration:none;}
+  .brand svg{width:26px;height:26px;}
+
+  .crumbs{padding:20px 0 0;font-size:14px;color:var(--ink-soft);}
+  .crumbs a{color:var(--ink-soft);text-decoration:none;}
+  .crumbs a:hover{text-decoration:underline;}
+  .crumbs span{color:var(--ink);}
+
+  main{padding:28px 0 64px;}
+  .progress-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+  .progress-row h1{font-size:22px;}
+  .progress-row .count{font-size:14px;color:var(--ink-soft);}
+  .bar{height:6px;background:var(--cream-deep);border-radius:3px;overflow:hidden;margin-bottom:28px;}
+  .bar-fill{height:100%;background:var(--gold);transition:width .3s;}
+
+  .card{
+    background:var(--cream-deep);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:28px;
+  }
+  .q-label{font-size:13px;color:var(--ink-soft);margin-bottom:10px;}
+  .sentence{font-size:19px;margin-bottom:22px;}
+  .sentence .part{background:var(--gold-light);padding:1px 3px;border-radius:2px;}
+
+  .options{display:flex;gap:12px;margin-bottom:6px;flex-wrap:wrap;}
+  .opt{
+    flex:1;
+    min-width:160px;
+    padding:14px 16px;
+    border:1.5px solid var(--line);
+    border-radius:4px;
+    background:var(--cream);
+    font-family:'PT Sans',sans-serif;
+    font-size:16px;
+    font-weight:700;
+    color:var(--ink);
+    cursor:pointer;
+    text-align:center;
+  }
+  .opt:hover{border-color:var(--green);}
+  .opt:disabled{cursor:default;}
+  .opt.correct{background:var(--green);border-color:var(--green);color:var(--cream);}
+  .opt.wrong{background:var(--bad);border-color:var(--bad);color:var(--cream);}
+  .opt.dim{opacity:0.5;}
+
+  .feedback{
+    margin-top:18px;
+    padding:14px 16px;
+    border-radius:4px;
+    font-size:15px;
+    display:none;
+  }
+  .feedback.show{display:block;}
+  .feedback.ok{background:rgba(43,89,65,0.12);color:var(--green-deep);}
+  .feedback.bad{background:rgba(156,43,43,0.1);color:var(--bad);}
+  .feedback .correct-sentence{margin-top:8px;font-weight:700;}
+
+  .next-row{margin-top:20px;text-align:right;}
+  .btn{
+    display:inline-block;
+    padding:11px 22px;
+    border-radius:2px;
+    font-weight:700;
+    font-size:15px;
+    background:var(--green);
+    color:var(--cream);
+    border:none;
+    cursor:pointer;
+    font-family:'PT Sans',sans-serif;
+    visibility:hidden;
+  }
+  .btn.show{visibility:visible;}
+
+  .result{text-align:center;padding:40px 0;}
+  .result .score{font-family:'PT Serif',serif;font-size:52px;color:var(--green-deep);margin-bottom:10px;}
+  .result p{color:var(--ink-soft);font-size:16px;margin-bottom:24px;}
+  .result-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn-outline{
+    display:inline-block;padding:11px 22px;border-radius:2px;font-weight:700;font-size:15px;
+    border:1.5px solid var(--green);color:var(--green);background:transparent;text-decoration:none;
+  }
+
+  footer{padding:28px 0;text-align:center;color:var(--ink-soft);font-size:14px;border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="#2B5941" stroke-width="1.5"/><path d="M13 26V14L20 20L27 14V26" stroke="#2B5941" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Слово
+    </a>
+  </div>
+</header>
+
+<div class="wrap crumbs">
+  <a href="index.html">Главная</a> · <a href="prichastny-oborot.html">Причастный оборот</a> · <span>Тренажёр</span>
+</div>
+
+<main class="wrap">
+
+  <div id="quiz-area">
+    <div class="progress-row">
+      <h1>Тренажёр: запятые при обороте</h1>
+      <div class="count" id="count">Вопрос 1 из 8</div>
+    </div>
+    <div class="bar"><div class="bar-fill" id="bar-fill" style="width:12.5%"></div></div>
+
+    <div class="card">
+      <div class="q-label">Нужны ли здесь запятые?</div>
+      <div class="sentence" id="sentence"></div>
+      <div class="options">
+        <button class="opt" id="opt-yes" onclick="answer(true)">Нужны</button>
+        <button class="opt" id="opt-no" onclick="answer(false)">Не нужны</button>
+      </div>
+      <div class="feedback" id="feedback"></div>
+      <div class="next-row">
+        <button class="btn" id="next-btn" onclick="next()">Далее →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="result" id="result-area" style="display:none;">
+    <div class="score" id="score-text"></div>
+    <p id="score-comment"></p>
+    <div class="result-actions">
+      <button class="btn-outline" onclick="restart()">Пройти ещё раз</button>
+      <a class="btn" href="prichastny-oborot.html" style="text-decoration:none;">К теории</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Портал «Слово» · русский язык и РКИ
+</footer>
+
+<script>
+const questions = [
+  {
+    sentence: "Дорожка <span class='part'>ведущая к морю</span> проходила через сад.",
+    plain: "Дорожка, ведущая к морю, проходила через сад.",
+    needsComma: true,
+    why: "Оборот стоит после определяемого слова «дорожка» — выделяется запятыми с двух сторон."
+  },
+  {
+    sentence: "<span class='part'>Ведущая к морю</span> дорожка проходила через сад.",
+    plain: "Ведущая к морю дорожка проходила через сад.",
+    needsComma: false,
+    why: "Оборот стоит перед определяемым словом «дорожка» — запятые не нужны."
+  },
+  {
+    sentence: "Книга <span class='part'>лежащая на столе</span> принадлежит брату.",
+    plain: "Книга, лежащая на столе, принадлежит брату.",
+    needsComma: true,
+    why: "Оборот стоит после слова «книга» — нужны запятые с двух сторон."
+  },
+  {
+    sentence: "<span class='part'>Лежащая на столе</span> книга принадлежит брату.",
+    plain: "Лежащая на столе книга принадлежит брату.",
+    needsComma: false,
+    why: "Оборот стоит перед словом «книга» — запятые не нужны."
+  },
+  {
+    sentence: "Ученики <span class='part'>решившие задачу первыми</span> получили призы.",
+    plain: "Ученики, решившие задачу первыми, получили призы.",
+    needsComma: true,
+    why: "Оборот стоит после слова «ученики» — нужны запятые."
+  },
+  {
+    sentence: "<span class='part'>Решившие задачу первыми</span> ученики получили призы.",
+    plain: "Решившие задачу первыми ученики получили призы.",
+    needsComma: false,
+    why: "Оборот стоит перед словом «ученики» — запятые не нужны."
+  },
+  {
+    sentence: "Письмо <span class='part'>отправленное вчера</span> ещё не дошло.",
+    plain: "Письмо, отправленное вчера, ещё не дошло.",
+    needsComma: true,
+    why: "Оборот стоит после слова «письмо» — нужны запятые с двух сторон."
+  },
+  {
+    sentence: "<span class='part'>Отправленное вчера</span> письмо ещё не дошло.",
+    plain: "Отправленное вчера письмо ещё не дошло.",
+    needsComma: false,
+    why: "Оборот стоит перед словом «письмо» — запятые не нужны."
+  }
+];
+
+let current = 0;
+let score = 0;
+let answered = false;
+
+function render(){
+  const q = questions[current];
+  document.getElementById('sentence').innerHTML = q.sentence;
+  document.getElementById('count').textContent = 'Вопрос ' + (current+1) + ' из ' + questions.length;
+  document.getElementById('bar-fill').style.width = ((current+1)/questions.length*100) + '%';
+  document.getElementById('feedback').className = 'feedback';
+  document.getElementById('feedback').innerHTML = '';
+  document.getElementById('next-btn').classList.remove('show');
+  const yes = document.getElementById('opt-yes');
+  const no = document.getElementById('opt-no');
+  [yes, no].forEach(b => { b.disabled = false; b.className = 'opt'; });
+  answered = false;
+}
+
+function answer(choseYes){
+  if (answered) return;
+  answered = true;
+  const q = questions[current];
+  const correct = q.needsComma;
+  const yes = document.getElementById('opt-yes');
+  const no = document.getElementById('opt-no');
+  yes.disabled = true; no.disabled = true;
+
+  const chosenBtn = choseYes ? yes : no;
+  const otherBtn = choseYes ? no : yes;
+  const isRight = (choseYes === correct);
+
+  if (isRight){
+    chosenBtn.classList.add('correct');
+    otherBtn.classList.add('dim');
+    score++;
+  } else {
+    chosenBtn.classList.add('wrong');
+    otherBtn.classList.add('correct');
+  }
+
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback show ' + (isRight ? 'ok' : 'bad');
+  fb.innerHTML = (isRight ? 'Верно. ' : 'Не совсем. ') + q.why + '<div class="correct-sentence">' + q.plain + '</div>';
+
+  document.getElementById('next-btn').classList.add('show');
+}
+
+function next(){
+  if (!answered) return;
+  current++;
+  if (current >= questions.length){
+    showResult();
+  } else {
+    render();
+  }
+}
+
+function showResult(){
+  document.getElementById('quiz-area').style.display = 'none';
+  document.getElementById('result-area').style.display = 'block';
+  document.getElementById('score-text').textContent = score + ' из ' + questions.length;
+  let comment = 'Есть куда расти — вернись к теории и попробуй ещё раз.';
+  if (score === questions.length) comment = 'Отлично! Все запятые на месте.';
+  else if (score >= questions.length - 2) comment = 'Почти идеально — ещё чуть-чуть практики.';
+  document.getElementById('score-comment').textContent = comment;
+}
+
+function restart(){
+  current = 0; score = 0;
+  document.getElementById('result-area').style.display = 'none';
+  document.getElementById('quiz-area').style.display = 'block';
+  render();
+}
+
+render();
+</script>
+
+</body>
+</html>
